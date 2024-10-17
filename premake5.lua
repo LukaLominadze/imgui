@@ -2,8 +2,8 @@ project "ImGui"
 	kind "StaticLib"
 	language "C++"
 
-	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
+	targetdir ("%{wks.location}/dependencies/libs/%{prj.name}")
+    objdir ("%{wks.location}/dependencies/obj/%{prj.name}")
 
 	files
 	{
@@ -16,8 +16,16 @@ project "ImGui"
 		"imstb_rectpack.h",
 		"imstb_textedit.h",
 		"imstb_truetype.h",
-		"imgui_demo.cpp"
+		"imgui_demo.cpp",
+		"imgui_tables.cpp",
+		"imgui_impl_glfw.cpp",
+		"imgui_impl_glfw.h",
+		"imgui_impl_opengl3.cpp",
+		"imgui_impl_opengl3.h",
+		"imgui_impl_opengl3_loader.h"
 	}
+
+	includedirs { "%{wks.location}/dependencies/glfw/include" }
 
 	filter "system:windows"
 		systemversion "latest"
