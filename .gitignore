@@ -5,6 +5,10 @@
 imgui.ini
 imgui*.ini
 
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
+
 ## General build artifacts
 *.o
 *.obj
