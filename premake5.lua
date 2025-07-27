@@ -25,7 +25,7 @@ project "ImGui"
 		"imgui_impl_opengl3_loader.h"
 	}
 
-	includedirs { "%{wks.location}/dependencies/glfw/include" }
+	includedirs { "%{prj.location}/../glfw/include" }
 
 	filter "system:windows"
 		systemversion "latest"
