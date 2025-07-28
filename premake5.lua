@@ -2,8 +2,8 @@ project "ImGui"
 	kind "StaticLib"
 	language "C++"
 
-	targetdir ("%{wks.location}/dependencies/libs/%{prj.name}")
-    objdir ("%{wks.location}/dependencies/obj/%{prj.name}")
+	targetdir ("%{wks.location}/bin/" ..outputdir.. "/%{prj.name}")
+	objdir ("%{wks.location}/bin-int/" ..outputdir.. "/%{prj.name}")
 
 	files
 	{
@@ -25,17 +25,12 @@ project "ImGui"
 		"imgui_impl_opengl3_loader.h"
 	}
 
-	includedirs { "%{wks.location}/dependencies/glfw/include" }
+	includedirs { "%{prj.location}/../glfw/include" }
 
 	filter "system:windows"
 		systemversion "latest"
 		cppdialect "C++17"
 		staticruntime "On"
-	
-	filter "system:linux"
-	    systemversion "latest"
-	    cppdialect "C++17"
-	    staticruntime "On"
 
 	filter "configurations:Debug"
 		runtime "Debug"
